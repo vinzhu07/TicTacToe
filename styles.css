@@ -1,0 +1,37 @@
+
+.center {
+    width: 50%;
+    margin: auto;
+    align-content: center;
+}
+
+#board {
+    font-size: 80px;
+    font-family: sans-serif;
+}
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+td {
+    width: 8vw;
+    height: 8vw;
+    text-align: center;
+}
+
+table td { 
+    border-right: 3px solid black; 
+}
+
+table td:last-child {
+    border: 0;
+}
+
+table tr {
+    border-bottom: 3px solid black;
+}
+
+table tr:last-child {
+    border: 0;
+}
+
