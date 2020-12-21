@@ -11,27 +11,29 @@
 </head>
 
 <body>
-    <div class = "center">
-        <h1 style = "text-align: center; font-size:60px;">TicTacToe</h1>
+    <div class="center">
+        <h1 style="text-align: center; font-size:60px;">TicTacToe</h1>
         <table id="board">
             <tr>
-                <td id="0" onclick = "move(0)"></td>
-                <td id="1" onclick = "move(1)"></td>
-                <td id="2" onclick = "move(2)"></td>
+                <td id="0" onclick="move(0)"></td>
+                <td id="1" onclick="move(1)"></td>
+                <td id="2" onclick="move(2)"></td>
             </tr>
             <tr>
-                <td id="3" onclick = "move(3)"></td>
-                <td id="4" onclick = "move(4)"></td>
-                <td id="5" onclick = "move(5)"></td>
+                <td id="3" onclick="move(3)"></td>
+                <td id="4" onclick="move(4)"></td>
+                <td id="5" onclick="move(5)"></td>
             </tr>
             <tr>
-                <td id="6" onclick = "move(6)"></td>
-                <td id="7" onclick = "move(7)"></td>
-                <td id="8" onclick = "move(8)"></td>
+                <td id="6" onclick="move(6)"></td>
+                <td id="7" onclick="move(7)"></td>
+                <td id="8" onclick="move(8)"></td>
             </tr>
         </table>
-    </br>
-    <div id = "win" style = "text-align: center;">No one has won yet.</div>
+        </br>
+        <div id="win" style="text-align: center; font-size: 30px;">No one has won yet.</div> </br>
+        <button name="button" style = "display: block; margin: 0 auto;" onclick = "reset()">Reset</button> </br>
+        <div id="score" style="text-align: center; font-size: 25px;">Score: Player: 0 vs CPU: 0 vs Tie: 0</div> </br>
     </div>
 
 </body>

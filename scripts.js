@@ -3,10 +3,52 @@ var board = ["", "", "", "", "", "", "", "", ""];
 var turn = true;
 var over = false;
 var winner = "none";
+var cpu = 0;
+var player = 0;
+var tie = 0;
+
+function reset(){
+    if (winner === "player") {
+        player++;
+    }
+    if (winner === "cpu") {
+        cpu++;
+    }
+    winner = "none";
+    board = ["", "", "", "", "", "", "", "", ""];
+    turn = true;
+    over = false;
+    for (var x = 0; x < 9; x++) {
+        document.getElementById(x).innerText = board[x];
+    }
+    document.getElementById("win").innerText = "No one has won!";
+    document.getElementById("score").innerText = "Score: Player: " + player + " vs CPU: " + cpu + " vs Tie: " + tie;
+
+}
+
 
 function move(num) {
+    console.log("hi");
+    console.log(turn === true);
+    console.log(over === false);
+    var movea = 0;
+    var moveb = 0;
+    for (var x = 0; x < 9; x++) {
+        if (board[x] === "O") {
+            movea++;
+        }
+        if (board[x] === "X") {
+            moveb++
+        }
+    }
+    
+    for (var x = 0; x < 9; x++) {
+        document.getElementById(x).innerText = board[x];
+    }
+    console.log(board[num] == "");
+    if (movea <= moveb && over === false) {
+        console.log("hi");
 
-    if (turn === true && over === false) {
         if (board[num] == "") {
             //Register move
             document.getElementById(num).innerText = "O";
@@ -25,6 +67,7 @@ function move(num) {
             //Check if a move exists?
             if (!(board[0] === "" || board[1] === "" || board[2] === "" || board[3] === "" || board[4] === "" || board[5] === "" || board[6] === "" || board[7] === "" || board[8] === "")) {
                 document.getElementById("win").innerText = "It's a tie!";
+                tie++;
                 over = true;
                 return;
             }
@@ -45,8 +88,9 @@ function move(num) {
 
 
         }
+        console.log("done");
+
     }
-    console.log("done");
     return;
 }
 
@@ -68,6 +112,12 @@ function cpuMove() {
     for (var i = 0; i < 6; i += 3) {
         if (board[i] === "X" && board[i + 1] === "X" && board[i + 2] === "") {
             board[i + 2] = "X";
+            over = true;
+        }
+    }
+    for (var i = 0; i < 6; i += 3) {
+        if (board[i] === "X" && board[i + 1] === "" && board[i + 2] === "X") {
+            board[i + 1] = "X";
             over = true;
         }
     }
@@ -112,6 +162,7 @@ function cpuMove() {
 
     if (over === true) {
         document.getElementById("win").innerText = "CPU wins!";
+        winner = "cpu";
         return;
     }
 
