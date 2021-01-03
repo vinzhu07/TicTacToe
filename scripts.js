@@ -22,7 +22,7 @@ function reset(){
         document.getElementById(x).innerText = board[x];
     }
     document.getElementById("win").innerText = "No one has won!";
-    document.getElementById("score").innerText = "Score: Player: " + player + " vs CPU: " + cpu + " vs Tie: " + tie;
+    document.getElementById("score").innerText = "Score: " + player + " - " + cpu + " - " + tie + " (W - L - T)";
 
 }
 

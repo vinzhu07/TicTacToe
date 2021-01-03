@@ -1,4 +1,13 @@
+body {
+    background-color: #f0f2ef;
+}
 
+#title {
+    text-align: center; 
+    font-size:60px; 
+    margin: 20px;
+    /*color: #afd5aa;*/
+}
 .center {
     width: 50%;
     margin: auto;
