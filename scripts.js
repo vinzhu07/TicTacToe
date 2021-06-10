@@ -144,6 +144,9 @@ function cpuMove() {
 
     if (board[0] === "X" && board[3] === "X" && board[6] === "X") {
         over = true;
+        document.getElementById("win").innerText = "CPU wins!";
+        winner = "cpu";
+        return; 
     }
 
     //diagonal
