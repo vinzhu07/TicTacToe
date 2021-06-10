@@ -142,6 +142,10 @@ function cpuMove() {
         }
     }
 
+    if (board[0] === "X" && board[3] === "X" && board[6] === "X") {
+        over = true;
+    }
+
     //diagonal
     if (board[0] === "X" && board[4] === "X" && board[8] === "") {
         board[8] = "X";
